@@ -13,7 +13,7 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
-server.listen(port, function() {
+http.listen(port, function() {
     console.log("App is running on port " + port);
 });
  
