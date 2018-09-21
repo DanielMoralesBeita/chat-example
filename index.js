@@ -11,7 +11,12 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
+var port = process.env.PORT || 8000;
+ 
 
-http.listen(2000, function(){
-  console.log('listening on web *:2000');
+server.listen(port, function() {
+    console.log("App is running on port " + port);
 });
+/*http.listen(2000, function(){
+  console.log('listening on web *:2000');
+});*/
