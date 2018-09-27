@@ -9,4 +9,6 @@
   "Scripts": {
     "start": "node index.js" 
   }
+   "author": "Prueba",
+   "license": "MIT"
 }
