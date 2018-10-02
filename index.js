@@ -9,7 +9,8 @@ var app = express();
 //var app = express();
 //var server = require('http').Server(app);
 //var io = require('socket.io').listen(server);
-//var mongo = require('mongodb').MongoClient;
+/*TODO QUEDE aqui
+var mongo = require('mongodb').MongoClient;
 var quickselect = require('quickselect'); // Used to compute the median for latency
 
 var mapFormat = require('./js/server/format.js');
@@ -21,7 +22,7 @@ var Encoder = require('./js/server/Encoder.js').Encoder;
 server.enableBinary = true;
 gs.server = server;
 //Serve static content for the app from the "public" directory in the application directory.
-
+*/
     // GET /style.css etc
     app.use(express.static(__dirname + '/js'));
     app.use(express.static(__dirname + '/assets'));
