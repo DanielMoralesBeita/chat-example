@@ -1,8 +1,9 @@
-var app = require('express')();
+//var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 8000;
- 
+ var express = require('express');
+var app = express();
 //Serve static content for the app from the "public" directory in the application directory.
 
     // GET /style.css etc
