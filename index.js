@@ -4,6 +4,22 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 8000;
  var express = require('express');
 var app = express();
+
+//var express = require('express');
+//var app = express();
+//var server = require('http').Server(app);
+//var io = require('socket.io').listen(server);
+var mongo = require('mongodb').MongoClient;
+var quickselect = require('quickselect'); // Used to compute the median for latency
+
+var mapFormat = require('./js/server/format.js');
+var gs = require('./js/server/GameServer.js').GameServer;
+// For the binary protocol of update packets :
+var CoDec = require('./js/CoDec.js').CoDec;
+var Encoder = require('./js/server/Encoder.js').Encoder;
+
+server.enableBinary = true;
+gs.server = server;
 //Serve static content for the app from the "public" directory in the application directory.
 
     // GET /style.css etc
@@ -21,7 +37,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-server.lastPlayderID = 0;
+http.lastPlayderID = 0;
 
 io.on('connection', function(socket){
  
