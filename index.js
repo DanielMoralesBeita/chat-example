@@ -1,9 +1,9 @@
-//var app = require('express')();
+var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 8000;
- var express = require('express');
-var app = express();
+/// var express = require('express');
+//var app = express();
 
 //var express = require('express');
 //var app = express();
@@ -33,8 +33,8 @@ gs.server = server;
 
 http.lastPlayderID = 0;
 */
- app.use(express.static(__dirname + '/js'));
-    app.use(express.static(__dirname + '/assets'));
+// app.use(express.static(__dirname + '/js'));
+//    app.use(express.static(__dirname + '/assets'));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
