@@ -9,7 +9,7 @@ var app = express();
 //var app = express();
 //var server = require('http').Server(app);
 //var io = require('socket.io').listen(server);
-//var mongo = require('mongodb').MongoClient;
+var mongo = require('mongodb').MongoClient;
 var quickselect = require('quickselect'); // Used to compute the median for latency
 
 var mapFormat = require('./js/server/format.js');
