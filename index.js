@@ -3,9 +3,18 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 8000;
  
-/*app.use('/css',express.static(__dirname + '/css'));*/
+//Serve static content for the app from the "public" directory in the application directory.
+
+    // GET /style.css etc
+    app.use(express.static(__dirname + '/js'));
+    app.use(express.static(__dirname + '/assets'));
+// Mount the middleware at "/static" to serve static content only when their request path is prefixed with "/static".
+
+    // GET /static/style.css etc.
+/*app.use('/static', express.static(__dirname + '/public'));
+app.use('/css',express.static(__dirname + '/css'));
 app.use('/js',express.static(__dirname + '/js'));
-app.use('/assets',express.static(__dirname + '/assets'));
+app.use('/assets',express.static(__dirname + '/assets'));*/
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
